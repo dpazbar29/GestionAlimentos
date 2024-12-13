@@ -12,11 +12,11 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/h2-console/**").permitAll()  // Allow access to H2 console
-                        .anyRequest().authenticated()
+                        .requestMatchers("/", "/h2-console/**").permitAll()  // Permitir acceso público a la página de inicio y H2 Console
+                        .anyRequest().authenticated()  // Requerir autenticación para cualquier otra ruta
                 )
-                .csrf(csrf -> csrf.disable())  // Disable CSRF protection for H2 console
-                .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable()));  // Disable frame options for H2 console
+                .csrf(csrf -> csrf.disable())  // Deshabilitar protección CSRF (necesario para H2 Console)
+                .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable()));  // Permitir que la consola H2 funcione en marcos
 
         return http.build();
     }
