@@ -27,4 +27,20 @@ public class Recipiente {
 
     @OneToMany(mappedBy = "recipiente", cascade = CascadeType.ALL)
     private List<Alimento> alimentos;
+
+    public List<Alimento> getAlimentos() {
+        return alimentos;
+    }
+
+    public void setAlimentos(List<Alimento> alimentos) {
+        this.alimentos = alimentos;
+    }
+
+    public Long getTamanyo() {
+        return tamanyo;
+    }
+
+    public void setTamanyo(Long tamanyo) {
+        this.tamanyo = tamanyo;
+    }
 }

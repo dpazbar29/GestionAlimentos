@@ -42,4 +42,38 @@ public class Alimento {
 
     @Enumerated(EnumType.STRING)
     private Estado estado;
+
+    //Getters and Setters
+    public LocalDate getFechaCaducidad() {
+        return fechaCaducidad;
+    }
+
+    public void setFechaCaducidad(LocalDate fechaCaducidad) {
+        this.fechaCaducidad = fechaCaducidad;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public Integer getTamanyo() {
+        return tamanyo;
+    }
+
+    public void setTamanyo(Integer tamanyo) {
+        this.tamanyo = tamanyo;
+    }
+
+    public Recipiente getRecipiente() {
+        return recipiente;
+    }
+
+    public void setRecipiente(Recipiente recipiente) {
+        this.recipiente = recipiente;
+    }
+
 }
